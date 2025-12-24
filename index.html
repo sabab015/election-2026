@@ -12,6 +12,10 @@
 
     <link rel="stylesheet" href="timeline.css">
     <link rel="stylesheet" href="timer.css">
+    <link rel="stylesheet" href="summary.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -111,10 +115,111 @@
         </div>
     </section>
 
+    <section class="election-ui">
+        <div class="container">
+
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="election-title">নির্বাচনের সংক্ষিপ্ত তথ্য</h2>
+                    <p class="election-subtitle">জাতীয় সংসদ নির্বাচন সংক্রান্ত মূল পরিসংখ্যান</p>
+                </div>
+            </div>
+
+            <div class="row election-grid">
+
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-blue">
+                        <div class="icon-wrap bg-blue">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/conference-call.png" />
+                        </div>
+                        <div class="number stat" data-value="119689289"></div>
+                        <div class="label">মোট ভোটার</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-indigo">
+                        <div class="icon-wrap bg-indigo">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/male.png" />
+                        </div>
+                        <div class="number stat" data-value="60769741"></div>
+                        <div class="label">পুরুষ ভোটার</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-pink">
+                        <div class="icon-wrap bg-pink">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/female.png" />
+                        </div>
+                        <div class="number stat" data-value="58918699"></div>
+                        <div class="label">নারী ভোটার</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-purple">
+                        <div class="icon-wrap bg-purple">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/gender-neutral-user.png" />
+                        </div>
+                        <div class="number stat" data-value="849"></div>
+                        <div class="label">হিজড়া ভোটার</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-green">
+                        <div class="icon-wrap bg-green">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/user-group-man-man.png" />
+                        </div>
+                        <div class="number stat" data-value="1970"></div>
+                        <div class="label">মোট প্রার্থী</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-teal">
+                        <div class="icon-wrap bg-teal">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png" />
+                        </div>
+                        <div class="number stat" data-value="436"></div>
+                        <div class="label">স্বতন্ত্র প্রার্থী</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-orange">
+                        <div class="icon-wrap bg-orange">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/organization.png" />
+                        </div>
+                        <div class="number stat" data-value="28"></div>
+                        <div class="label">দল</div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="election-card card-red">
+                        <div class="icon-wrap bg-red">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/parliament.png" />
+                        </div>
+                        <div class="number stat" data-value="300"></div>
+                        <div class="label">আসন সংখ্যা</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
 
 
     <script src="timer.js"></script>
+    <script src="summary.js"></script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
