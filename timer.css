@@ -1,0 +1,166 @@
+/* =====================
+   HERO AREA
+===================== */
+.hero-area {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background-attachment: fixed;
+}
+
+.bg-img {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-overlay-2by5 {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-overlay-2by5::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(178, 223, 219, 0.75);
+    z-index: -1;
+}
+
+/* =====================
+   CONTENT WRAPPER
+===================== */
+.register-now {
+    padding: 0 5%;
+}
+
+.section-padding-100-0 {
+    padding-top: 100px;
+}
+
+/* =====================
+   HEADLINE
+===================== */
+.register-now-countdown h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0b1f33;
+    line-height: 1.2;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+}
+
+.register-now-countdown h1 span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #334155;
+}
+
+/* =====================
+   COUNTDOWN WRAPPER
+===================== */
+.events-cd {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =====================
+   COUNTDOWN CARD
+===================== */
+.events-cd .cd-box {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    padding: 18px 20px;
+    min-width: 110px;
+    text-align: center;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(6px);
+}
+
+/* =====================
+   NUMBER (BIGGER + BOLDER)
+===================== */
+.events-cd .cd-number {
+    display: block;
+    font-size: 40px;
+    /* BIGGER */
+    font-weight: 900;
+    /* BOLDER */
+    color: #0f2a44;
+    line-height: 1;
+    font-family: "Kiron", sans-serif;
+}
+
+/* =====================
+   LABEL
+===================== */
+.events-cd .cd-label {
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* =====================
+   TABLET
+===================== */
+@media (max-width: 991px) {
+    .events-cd .cd-box {
+        min-width: 95px;
+        padding: 16px;
+    }
+
+    .events-cd .cd-number {
+        font-size: 34px;
+    }
+}
+
+/* =====================
+   Mobile – FORCE 4 BOXES IN ONE LINE
+===================== */
+@media (max-width: 575px) {
+
+    .hero-area {
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .register-now-countdown h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Countdown wrapper */
+    .events-cd {
+        flex-wrap: nowrap;
+        /* IMPORTANT */
+        gap: 8px;
+        /* tighter gap */
+        width: 100%;
+    }
+
+    /* Countdown card */
+    .events-cd .cd-box {
+        flex: 1 1 0;
+        /* equal width */
+        min-width: 0;
+        /* CRITICAL */
+        padding: 10px 6px;
+        border-radius: 12px;
+    }
+
+    /* Number */
+    .events-cd .cd-number {
+        font-size: 24px;
+        font-weight: 900;
+    }
+
+    /* Label */
+    .events-cd .cd-label {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+}
