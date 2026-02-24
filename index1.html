@@ -17,43 +17,9 @@
         <div class="text-center">
 
             <div class="wow animate__fadeInUp" data-wow-delay="0.3s">
-                <h1 class="text-2xl md:text-4xl font-bold text-white drop-shadow-lg">
+                <h1 class="text-5xl md:text-5xl font-bold text-white drop-shadow-lg">
                     জাতীয় সংসদ নির্বাচন ২০২৬
-                    <span class="block mt-1 text-sm md:text-lg font-normal text-gray-200">
-                        ভোট গ্রহণের বাকি
-                    </span>
                 </h1>
-            </div>
-
-            <!-- Countdown Cards -->
-            <div class="wow animate__fadeInUp mt-6 flex flex-nowrap justify-center gap-3 md:gap-5 overflow-x-auto pb-2 px-2"
-                data-wow-delay="0.5s" data-countdown="2026-02-12T08:00:00">
-
-                <!-- Card -->
-                <div
-                    class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 md:px-5 py-4 min-w-20 md:min-w-24 text-center shadow-lg flex-shrink-0">
-                    <span class="block text-2xl md:text-4xl font-extrabold text-white" id="days">০০</span>
-                    <span class="block mt-1 text-xs md:text-sm font-medium text-gray-300">দিন</span>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 md:px-5 py-4 min-w-20 md:min-w-24 text-center shadow-lg flex-shrink-0">
-                    <span class="block text-2xl md:text-4xl font-extrabold text-white" id="hours">০০</span>
-                    <span class="block mt-1 text-xs md:text-sm font-medium text-gray-300">ঘণ্টা</span>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 md:px-5 py-4 min-w-20 md:min-w-24 text-center shadow-lg flex-shrink-0">
-                    <span class="block text-2xl md:text-4xl font-extrabold text-white" id="minutes">০০</span>
-                    <span class="block mt-1 text-xs md:text-sm font-medium text-gray-300">মিনিট</span>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 md:px-5 py-4 min-w-20 md:min-w-24 text-center shadow-lg flex-shrink-0">
-                    <span class="block text-2xl md:text-4xl font-extrabold text-white" id="seconds">০০</span>
-                    <span class="block mt-1 text-xs md:text-sm font-medium text-gray-300">সেকেন্ড</span>
-                </div>
-
             </div>
         </div>
     </div>
@@ -444,69 +410,6 @@
 
     document.addEventListener('DOMContentLoaded', renderResults);
 </script>
-
-
-
-<script>
-    function BN(n) {
-        return (typeof window.toBangla === 'function') ? window.toBangla(n) : n;
-    }
-
-    const resultData = [
-        { key: 'bnp', label: 'বিএনপি জোট', votes: 12345678, seats: 120, color: '#2563eb' },
-        { key: 'jamat', label: 'জামায়াত জোট', votes: 3456789, seats: 135, color: '#16a34a' },
-        { key: 'jp', label: 'জাতীয় পার্টি', votes: 2345678, seats: 25, color: '#f59e0b' },
-        { key: 'other', label: 'অন্যান্য', votes: 1234567, seats: 20, color: '#ef4444' }
-    ];
-
-    function drawPie(svgId, dataKey, total, legendId) {
-        const svg = document.getElementById(svgId);
-        const legend = document.getElementById(legendId);
-        svg.innerHTML = '';
-        legend.innerHTML = '';
-
-        let offset = 0;
-
-        resultData.forEach(d => {
-            const value = d[dataKey];
-            const percent = (value / total) * 100;
-
-            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circle.setAttribute('cx', '18');
-            circle.setAttribute('cy', '18');
-            circle.setAttribute('r', '15.9155');
-            circle.setAttribute('fill', 'transparent');
-            circle.setAttribute('stroke', d.color);
-            circle.setAttribute('stroke-width', '3.8');
-            circle.setAttribute('stroke-dasharray', `${percent} ${100 - percent}`);
-            circle.setAttribute('stroke-dashoffset', -offset);
-            svg.appendChild(circle);
-
-            offset += percent;
-
-            legend.innerHTML += `
-        <li class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full" style="background:${d.color}"></span>
-          <span class="text-slate-700">${d.label}</span>
-          <span class="ml-auto font-semibold text-slate-900">
-            ${BN(value)}
-          </span>
-        </li>
-      `;
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const totalVotes = resultData.reduce((a, b) => a + b.votes, 0);
-        document.getElementById('voteTotal').innerText = BN(totalVotes);
-
-        drawPie('votePie', 'votes', totalVotes, 'voteLegend');
-        drawPie('seatPie', 'seats', 300, 'seatLegend');
-    });
-</script>
-
-
-
 
 <script>
     function BN(n) {

@@ -1,0 +1,134 @@
+<!-- Ramadan Countdown Widget (Embed) -->
+<div class="ramadan-widget-wrapper">
+
+    <!-- Tailwind CDN (load once per page) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+
+        .ramadan-bn-font {
+            font-family: 'Noto Serif Bengali', serif;
+        }
+    </style>
+
+    <div class="ramadan-bn-font w-[300px] h-[100px] flex rounded-xl overflow-hidden shadow-lg
+              bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+
+        <!-- Logo -->
+        <a href="https://bonikbarta.com"
+            class="w-[110px] h-full flex items-center justify-center bg-white/95 hover:bg-white transition">
+            <img src="https://static.bonikbarta.com/original_images/BONIK-BARTA-LOGO-Bn_DRbmlmf.png"
+                class="max-h-[70px] object-contain" alt="Bonik Barta" />
+        </a>
+
+        <!-- Content -->
+        <div class="flex-1 px-2 py-1 flex flex-col justify-center">
+
+            <div id="ramadan-label" class="text-[13px] font-semibold text-center text-emerald-300 leading-tight mb-1">
+                লোড হচ্ছে...
+            </div>
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex flex-col items-center">
+                    <div id="ramadan-hours"
+                        class="w-9 h-8 flex items-center justify-center rounded-md bg-white text-slate-900 font-bold text-sm shadow">
+                        ০০</div>
+                    <span class="text-[10px] mt-[2px] text-slate-300">ঘন্টা</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div id="ramadan-minutes"
+                        class="w-9 h-8 flex items-center justify-center rounded-md bg-white text-slate-900 font-bold text-sm shadow">
+                        ০০</div>
+                    <span class="text-[10px] mt-[2px] text-slate-300">মিনিট</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div id="ramadan-seconds"
+                        class="w-9 h-8 flex items-center justify-center rounded-md bg-white text-slate-900 font-bold text-sm shadow">
+                        ০০</div>
+                    <span class="text-[10px] mt-[2px] text-slate-300">সেকেন্ড</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+
+        const timings = [
+            { date: '2026-02-19', sehri: '05:12 AM', iftar: '05:58 PM' },
+            { date: '2026-02-20', sehri: '05:11 AM', iftar: '05:58 PM' },
+            { date: '2026-02-21', sehri: '05:11 AM', iftar: '05:59 PM' },
+            { date: '2026-02-22', sehri: '05:10 AM', iftar: '05:59 PM' },
+            { date: '2026-02-23', sehri: '05:09 AM', iftar: '06:00 PM' },
+            { date: '2026-02-24', sehri: '05:08 AM', iftar: '06:00 PM' },
+            { date: '2026-02-25', sehri: '05:08 AM', iftar: '06:01 PM' },
+            { date: '2026-02-26', sehri: '05:07 AM', iftar: '06:01 PM' },
+            { date: '2026-02-27', sehri: '05:06 AM', iftar: '06:02 PM' },
+            { date: '2026-02-28', sehri: '05:05 AM', iftar: '06:02 PM' },
+
+            { date: '2026-03-01', sehri: '05:05 AM', iftar: '06:02 PM' },
+            { date: '2026-03-02', sehri: '05:04 AM', iftar: '06:03 PM' },
+            { date: '2026-03-03', sehri: '05:03 AM', iftar: '06:03 PM' },
+            { date: '2026-03-04', sehri: '05:02 AM', iftar: '06:04 PM' },
+            { date: '2026-03-05', sehri: '05:01 AM', iftar: '06:04 PM' },
+            { date: '2026-03-06', sehri: '05:00 AM', iftar: '06:05 PM' },
+            { date: '2026-03-07', sehri: '04:59 AM', iftar: '06:05 PM' },
+            { date: '2026-03-08', sehri: '04:58 AM', iftar: '06:06 PM' },
+            { date: '2026-03-09', sehri: '04:57 AM', iftar: '06:07 PM' },
+            { date: '2026-03-10', sehri: '04:57 AM', iftar: '06:07 PM' },
+
+            { date: '2026-03-11', sehri: '04:56 AM', iftar: '06:07 PM' },
+            { date: '2026-03-12', sehri: '04:55 AM', iftar: '06:08 PM' },
+            { date: '2026-03-13', sehri: '04:54 AM', iftar: '06:08 PM' },
+            { date: '2026-03-14', sehri: '04:53 AM', iftar: '06:09 PM' },
+            { date: '2026-03-15', sehri: '04:52 AM', iftar: '06:09 PM' },
+            { date: '2026-03-16', sehri: '04:51 AM', iftar: '06:10 PM' },
+            { date: '2026-03-17', sehri: '04:50 AM', iftar: '06:10 PM' },
+            { date: '2026-03-18', sehri: '04:49 AM', iftar: '06:10 PM' },
+            { date: '2026-03-19', sehri: '04:48 AM', iftar: '06:11 PM' },
+            { date: '2026-03-20', sehri: '04:47 AM', iftar: '06:11 PM' }
+        ];
+
+
+        const digits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        const toBn = n => n.toString().padStart(2, '0').split('').map(d => digits[d]).join('');
+
+        const toBnTime = t => {
+            const [h, m, p] = t.match(/(\d+):(\d+) (AM|PM)/).slice(1);
+            return `${p === 'AM' ? 'ভোর' : 'সন্ধ্যা'} ${toBn(h)}:${toBn(m)}`;
+        };
+
+        function getNext() {
+            const now = new Date();
+            for (const t of timings) {
+                const s = new Date(`${t.date} ${t.sehri}`);
+                const i = new Date(`${t.date} ${t.iftar}`);
+                if (now < s) return { label: `সেহরির শেষ - ${toBnTime(t.sehri)}`, target: s };
+                if (now < i) return { label: `ইফতার - ${toBnTime(t.iftar)}`, target: i };
+            }
+            return null;
+        }
+
+        function update() {
+            const e = getNext();
+            if (!e) return;
+
+            document.getElementById('ramadan-label').textContent = e.label;
+
+            const d = e.target - new Date();
+            document.getElementById('ramadan-hours').textContent = toBn(Math.floor(d / 36e5) % 24);
+            document.getElementById('ramadan-minutes').textContent = toBn(Math.floor(d / 6e4) % 60);
+            document.getElementById('ramadan-seconds').textContent = toBn(Math.floor(d / 1000) % 60);
+        }
+
+        update();
+        setInterval(update, 1000);
+
+    })();
+</script>
